@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- <script src="https://code.angularjs.org/1.7.4/angular.min.js"></script> -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-mocks/angular-mocks.js"></script>
+    <script scr="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script> -->
+    <!--Jasmine  -->
+    <!-- <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script> -->
+    <!-- /jasmine -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
+
+
+
+</head>
+
+<body ng-app="MyApp">
+    <!-- <div ng-controller="foodController">
+    </div> -->
+    <div ng-controller="TestHttpController">
+        <div class="row">
+            <div class="col-md-7 col-lg-5 col-sm-9" style="text-align:center">
+                <form action="" ng-submit="" class="form-group">
+                    <input type="text" name="food.name" value="name" ng-model="food.name" class="form-control" required>
+                    <div class="btn-group" data-toggle="buttons">
+
+                        <label class="btn btn-primary" ng-model="food.type='Breakfast'" btn-checkbox>
+                            Breakfast
+                        </label>
+
+                        <label class="btn btn-primary" ng-model="food.type='Lunch'" btn-checkbox>
+                            Lunch
+                        </label>
+
+                        <label class="btn btn-primary" ng-model="food.type='Dinner'" btn-checkbox>
+                            Dinner
+                        </label>
+
+                    </div>
+                    <button ng-click="clearForm()" class="form-control">Add</button>
+                </form>
+                <button class="form-control" ng-click="showData()">Show http</button>
+                <ul ng-repeat="item in data">
+                    <li>{{data | json}}</li>
+                    <!-- <li>{{item.name}} <label for="">{{item..type}}</label></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        <datalist id="languages" multi>
+            <option value="CSS">
+                <div>Css</div>
+            </option>
+            <option value="Javascript">
+                <div>Javascript</div>
+            </option>
+            <option value="Java">
+                <div>Java</div>
+            </option>
+        </datalist>
+        <input type="text" list="options">
+        <datalist id="options" multiple>
+            <ul>
+                <li>
+                    <option value="iOS">iOS</option>
+                </li>
+                <li>
+                    <option value="Android">Android</option>
+                </li>
+                <li>
+                    <option value="Windows">Windows</option>
+                </li>
+
+            </ul>
+        </datalist>
+
+        <ui-select multiple ng-model="ctrl.multipleDemo.colors" theme="bootstrap" ng-disabled="ctrl.disabled" close-on-select="false"
+            style="width: 300px;" title="Choose a color">
+            <ui-select-match placeholder="Select colors...">{{$item}}</ui-select-match>
+            <ui-select-choices repeat="color in ctrl.availableColors | filter:$select.search">
+                {{color}}
+            </ui-select-choices>
+        </ui-select>
+    </div>
+    <!-- <script src="app/app.js"></script> -->
+    <script src="app/controller.js"></script>
+
+    <!-- <script src="tests/controllerspec.js"></script>
+    <script src="tests/service.spec.js"></script> -->
+
+</body>
+
+</html>
